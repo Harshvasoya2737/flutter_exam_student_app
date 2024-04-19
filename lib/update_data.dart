@@ -79,11 +79,10 @@ class _update_dataState extends State<update_data> {
                 ],
               ),
               SizedBox(width: 16),
-              ElevatedButton(onPressed: getImage,
-                  child: Text("Take Photo")),
+              ElevatedButton(onPressed: getImage, child: Text("Take Photo")),
               SizedBox(width: 16),
-              ElevatedButton(onPressed: getImages,
-                  child: Text("choose from Gallery")),
+              ElevatedButton(
+                  onPressed: getImages, child: Text("choose from Gallery")),
               SizedBox(height: 16),
               TextField(
                 controller: nameController,
@@ -114,7 +113,7 @@ class _update_dataState extends State<update_data> {
                     image: image ?? widget.student.image,
                     division: widget.student.division,
                   );
-          
+
                   Navigator.pop(context, editedStudent);
                 },
                 child: Text("Save"),

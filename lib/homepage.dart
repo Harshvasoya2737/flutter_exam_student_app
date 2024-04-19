@@ -70,21 +70,25 @@ class _HomepageState extends State<Homepage> {
                           builder: (BuildContext context) {
                             return AlertDialog(
                               title: Text("Edit???"),
-                              content: Text("Are you sure you want to edit this Student?"),
+                              content: Text(
+                                  "Are you sure you want to edit this Student?"),
                               actions: [
                                 TextButton(
                                   onPressed: () {
-                                    Navigator.of(context).pop(); // Close the dialog
+                                    Navigator.of(context)
+                                        .pop(); // Close the dialog
                                   },
                                   child: Text("No"),
                                 ),
                                 TextButton(
                                   onPressed: () {
-                                    Navigator.of(context).pop(); // Close the dialog
+                                    Navigator.of(context)
+                                        .pop(); // Close the dialog
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => update_data(student: student),
+                                        builder: (context) =>
+                                            update_data(student: student),
                                       ),
                                     ).then((editedStudent) {
                                       if (editedStudent != null &&
@@ -111,11 +115,13 @@ class _HomepageState extends State<Homepage> {
                           builder: (BuildContext context) {
                             return AlertDialog(
                               title: Text("Delete???"),
-                              content: Text("Are you sure you want to Delete this Student?"),
+                              content: Text(
+                                  "Are you sure you want to Delete this Student?"),
                               actions: [
                                 TextButton(
                                   onPressed: () {
-                                    Navigator.of(context).pop(); // Close the dialog
+                                    Navigator.of(context)
+                                        .pop(); // Close the dialog
                                   },
                                   child: Text("No"),
                                 ),
@@ -124,7 +130,7 @@ class _HomepageState extends State<Homepage> {
                                     Navigator.of(context).pop();
                                     setState(() {
                                       studentList.removeAt(index);
-                                    });// Close the dialog
+                                    }); // Close the dialog
                                   },
                                   child: Text("Yes"),
                                 ),

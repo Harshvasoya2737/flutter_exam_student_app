@@ -87,7 +87,8 @@ class _AddDataState extends State<AddData> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton( onPressed: () => getImage(ImageSource.camera),
+                ElevatedButton(
+                    onPressed: () => getImage(ImageSource.camera),
                     child: Row(
                       children: [
                         Icon(Icons.ac_unit_sharp),
@@ -95,14 +96,14 @@ class _AddDataState extends State<AddData> {
                       ],
                     )),
                 SizedBox(width: 10),
-                ElevatedButton( onPressed: () => getImage(ImageSource.gallery),
+                ElevatedButton(
+                    onPressed: () => getImage(ImageSource.gallery),
                     child: Row(
                       children: [
                         Icon(Icons.photo_library),
                         Text("choose from Gallery"),
                       ],
                     )),
-
               ],
             ),
             SizedBox(height: 20),
@@ -167,9 +168,6 @@ class _AddDataState extends State<AddData> {
           ],
         ),
       ),
-      // onPressed: () => getImage(ImageSource.camera),
-      // onPressed: () => getImage(ImageSource.gallery),
-      // icon: Icon(Icons.photo_library),
     );
   }
 }
