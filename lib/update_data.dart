@@ -83,7 +83,7 @@ class _update_dataState extends State<update_data> {
                   child: Text("Take Photo")),
               SizedBox(width: 16),
               ElevatedButton(onPressed: getImages,
-                  child: Text("Take from Gallery")),
+                  child: Text("choose from Gallery")),
               SizedBox(height: 16),
               TextField(
                 controller: nameController,

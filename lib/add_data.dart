@@ -95,10 +95,14 @@ class _AddDataState extends State<AddData> {
                       ],
                     )),
                 SizedBox(width: 10),
-                ElevatedButton.icon(
+                ElevatedButton( onPressed: () => getImage(ImageSource.gallery),
+                    child: Row(
+                      children: [
+                        Icon(Icons.photo_library),
+                        Text("choose from Gallery"),
+                      ],
+                    )),
 
-                  label: Text("Choose from Gallery"),
-                ),
               ],
             ),
             SizedBox(height: 20),
