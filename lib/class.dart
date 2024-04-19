@@ -1,9 +1,9 @@
 import 'dart:io';
 
 class StudentData {
-  String grId;
+  String? grId;
   String name;
-  String std;
+  String? std;
   String contact;
   File image;
 

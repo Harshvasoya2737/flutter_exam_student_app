@@ -29,7 +29,7 @@ class _AddDataState extends State<AddData> {
 
   void _resetData() {
     setState(() {
-      _image = null;
+      image = null;
       grIdController.clear();
       nameController.clear();
       stdController.clear();
@@ -37,7 +37,7 @@ class _AddDataState extends State<AddData> {
     });
   }
   void _saveData() {
-    if (_image != null) {
+    if (image != null) {
       StudentData studentData = StudentData(
         grId: grIdController.text,
         name: nameController.text,
@@ -87,9 +87,9 @@ class _AddDataState extends State<AddData> {
         child: Column(
           children: [
             SizedBox(height: 20),
-            if (_image != null)
+            if (image != null)
               Image.file(
-                _image!,
+                image!,
                 height: 150,
                 width: 150,
                 fit: BoxFit.cover,
@@ -122,7 +122,7 @@ class _AddDataState extends State<AddData> {
             ),
             SizedBox(height: 20),
             TextField(
-              controller: _grIdController,
+              controller: grIdController,
               decoration: InputDecoration(
                 labelText: 'Enter GR-ID of Student',
                 border: OutlineInputBorder(),
@@ -131,7 +131,7 @@ class _AddDataState extends State<AddData> {
             ),
             SizedBox(height: 20),
             TextField(
-              controller: _nameController,
+              controller: nameController,
               decoration: InputDecoration(
                 labelText: 'Enter Name of Student',
                 border: OutlineInputBorder(),
@@ -140,7 +140,7 @@ class _AddDataState extends State<AddData> {
             ),
             SizedBox(height: 20),
             TextField(
-              controller: _stdController,
+              controller: stdController,
               decoration: InputDecoration(
                 labelText: 'Enter Std of Student',
                 border: OutlineInputBorder(),
@@ -149,7 +149,7 @@ class _AddDataState extends State<AddData> {
             ),
             SizedBox(height: 20),
             TextField(
-              controller: _contactController,
+              controller: contactController,
               decoration: InputDecoration(
                 labelText: 'Enter Contact of Student',
                 border: OutlineInputBorder(),
@@ -182,10 +182,10 @@ class _AddDataState extends State<AddData> {
 
   @override
   void dispose() {
-    _grIdController.dispose();
-    _nameController.dispose();
-    _stdController.dispose();
-    _contactController.dispose();
+    grIdController.dispose();
+    nameController.dispose();
+    stdController.dispose();
+    contactController.dispose();
     super.dispose();
   }
 }
