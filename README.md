@@ -20,6 +20,8 @@ I'm sharing you the My application name as (student detail app) screenshot
 ![Screenshot 2024-04-19 153143](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/831cebf4-c9b7-46a9-a1dd-1de9fcd5111a)
 
 
+
+
 I'm also sharing you my application name and student data app screen recording to see all my functionality of applcation in 3 (Three) Parts 
 
 
