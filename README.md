@@ -1,4 +1,4 @@
-Hello Everyone, my name is Harsh Vasoya Today I had made a (Student detail app) using Flutter where a School or institute or a college can manage and Store there student data Where we can store the name of student, their contact number, their GR ID, Their class ,their division and we can also save the image of student and I had made a good functionality in my student detail app where we can add student details , we can delete the student detail also, we can edit the student detail also, and If you open the student Detail app You get a good user interface with splash screen in a starting of my application and you get a good user experience also and user can easily use my application name as student detail app thank you keep supporting......
+Hello Everyone, My name is Harsh Vasoya Today I had made a (Student detail app) using Flutter where a School or institute or a college can manage and Store there student data Where we can store the name of student, their contact number, their GR ID, Their class ,their division and we can also save the image of student and I had made a good functionality in my student detail app where we can add student details , we can delete the student detail also, we can edit the student detail also, and If you open the student Detail app You get a good user interface with splash screen in a starting of my application and you get a good user experience also and user can easily use my application name as student detail app thank you keep supporting......
 
 I'm sharing you the My application name as (student detail app) screenshot
 
@@ -20,4 +20,15 @@ I'm sharing you the My application name as (student detail app) screenshot
 ![Screenshot 2024-04-19 153143](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/831cebf4-c9b7-46a9-a1dd-1de9fcd5111a)
 
 
-I'm also sharing you my application name and student data app screen recording to see all my functionality of applcation
+I'm also sharing you my application name and student data app screen recording to see all my functionality of applcation in 3 (Three) Parts 
+
+
+https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/6776b1ad-3a12-44e4-8a42-e5b526f97151
+
+
+https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/e90055e6-3bc2-444e-9df7-2fad0400f351
+
+
+https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/28e7bead-217b-4b06-851e-9268d50f0808
+
+
