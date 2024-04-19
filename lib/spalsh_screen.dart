@@ -1,4 +1,3 @@
-
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -15,11 +14,11 @@ class _splashscreenState extends State<splashscreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer(Duration(seconds: 2),() {
+    Timer(Duration(seconds: 5), () {
       Navigator.pushReplacementNamed(context, 'home');
-
     });
   }
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(

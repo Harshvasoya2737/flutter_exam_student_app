@@ -16,8 +16,9 @@ class _AddDataState extends State<AddData> {
   TextEditingController nameController = TextEditingController();
   TextEditingController stdController = TextEditingController();
   TextEditingController contactController = TextEditingController();
+  TextEditingController divisionController = TextEditingController();
 
-  Future<void> _getImageFromCamera(ImageSource source) async {
+  Future<void> getImage(ImageSource source) async {
     final imagePicker = ImagePicker();
     final pickedImage = await imagePicker.pickImage(source: source);
     if (pickedImage != null) {
@@ -27,46 +28,20 @@ class _AddDataState extends State<AddData> {
     }
   }
 
-  void _resetData() {
-    setState(() {
-      image = null;
-      grIdController.clear();
-      nameController.clear();
-      stdController.clear();
-      contactController.clear();
-    });
-  }
   void _saveData() {
     if (image != null) {
       StudentData studentData = StudentData(
         grId: grIdController.text,
         name: nameController.text,
         std: stdController.text,
+        division: divisionController.text,
         contact: contactController.text,
         image: image!,
       );
 
       Navigator.pop(context, studentData);
-    } else {
-      // Handle case where no image is selected
-      showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            title: Text("Error"),
-            content: Text("Please select an image."),
-            actions: [
-              TextButton(
-                onPressed: () => Navigator.pop(context),
-                child: Text("OK"),
-              ),
-            ],
-          );
-        },
-      );
     }
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -78,9 +53,14 @@ class _AddDataState extends State<AddData> {
           "Add Student Data",
           style: TextStyle(color: Colors.white),
         ),
-        leading: Icon(
-          Icons.arrow_back_ios_new_outlined,
-          color: Colors.white,
+        leading: InkWell(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Icon(
+            Icons.arrow_back_ios_new_outlined,
+            color: Colors.white,
+          ),
         ),
       ),
       body: SingleChildScrollView(
@@ -107,21 +87,23 @@ class _AddDataState extends State<AddData> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton.icon(
-                  onPressed: () => _getImageFromCamera(ImageSource.camera),
-                  icon: Icon(Icons.camera),
-                  label: Text("Take Photo"),
-                ),
+                ElevatedButton( onPressed: () => getImage(ImageSource.camera),
+                    child: Row(
+                      children: [
+                        Icon(Icons.ac_unit_sharp),
+                        Text("Take Photo"),
+                      ],
+                    )),
                 SizedBox(width: 10),
                 ElevatedButton.icon(
-                  onPressed: () => _getImageFromCamera(ImageSource.gallery),
-                  icon: Icon(Icons.photo_library),
+
                   label: Text("Choose from Gallery"),
                 ),
               ],
             ),
             SizedBox(height: 20),
             TextField(
+              keyboardType: TextInputType.number,
               controller: grIdController,
               decoration: InputDecoration(
                 labelText: 'Enter GR-ID of Student',
@@ -141,6 +123,7 @@ class _AddDataState extends State<AddData> {
             SizedBox(height: 20),
             TextField(
               controller: stdController,
+              keyboardType: TextInputType.number,
               decoration: InputDecoration(
                 labelText: 'Enter Std of Student',
                 border: OutlineInputBorder(),
@@ -149,6 +132,16 @@ class _AddDataState extends State<AddData> {
             ),
             SizedBox(height: 20),
             TextField(
+              controller: divisionController,
+              decoration: InputDecoration(
+                labelText: 'Enter Divsion of Student',
+                border: OutlineInputBorder(),
+                prefixIcon: Icon(Icons.input),
+              ),
+            ),
+            SizedBox(height: 20),
+            TextField(
+              keyboardType: TextInputType.number,
               controller: contactController,
               decoration: InputDecoration(
                 labelText: 'Enter Contact of Student',
@@ -159,17 +152,10 @@ class _AddDataState extends State<AddData> {
             Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 100),
+                  padding: const EdgeInsets.only(left: 140),
                   child: ElevatedButton(
                     onPressed: _saveData,
                     child: Text("Save"),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: ElevatedButton(
-                    onPressed: _resetData,
-                    child: Text("Reset"),
                   ),
                 ),
               ],
@@ -177,15 +163,9 @@ class _AddDataState extends State<AddData> {
           ],
         ),
       ),
+      // onPressed: () => getImage(ImageSource.camera),
+      // onPressed: () => getImage(ImageSource.gallery),
+      // icon: Icon(Icons.photo_library),
     );
-  }
-
-  @override
-  void dispose() {
-    grIdController.dispose();
-    nameController.dispose();
-    stdController.dispose();
-    contactController.dispose();
-    super.dispose();
   }
 }
