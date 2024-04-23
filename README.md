@@ -13,11 +13,11 @@ I'm sharing you the My application name as (student detail app) screenshot
 ![Screenshot 2024-04-19 152954](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/1e70f668-ca09-4458-9f10-aa455a34ce47)
 ![Screenshot 2024-04-19 153038](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/22c3ca03-546e-4dd0-8d37-f94e18249e98)
 ![Screenshot 2024-04-19 153048](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/baaa4872-1ef3-41b1-9d65-ab917f265719)
-![Screenshot 2024-04-19 153057](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/52ce90df-caaa-4956-b222-7d06ca85f0ca)
-![Screenshot 2024-04-19 153105](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/54bc7fd1-c234-4e46-bf73-53c57af3c71c)
-![Screenshot 2024-04-19 153112](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/373c3c77-0ccc-4221-b797-f7c9f0606f63)
-![Screenshot 2024-04-19 153130](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/59eefb51-f934-4394-9850-5fd59618fbe7)
-![Screenshot 2024-04-19 153143](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/831cebf4-c9b7-46a9-a1dd-1de9fcd5111a)
+![Screenshot 2024-04-23 145935](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/e3193fd0-377e-487b-89da-98f7e3f5a528)
+![Screenshot 2024-04-23 145956](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/b783ef95-b592-4abc-92d0-d4ea35a77c10)
+![Screenshot 2024-04-23 150018](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/7b0b1e81-c3be-4f7c-851e-489ee3c9c6de)
+![Screenshot 2024-04-23 150036](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/8ff4be43-af61-4d74-a2ee-e14844b9aa8e)
+![Screenshot 2024-04-23 150252](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/dfb7ac50-37a5-4224-9d6e-9276370db2a9)
 
 
 
