@@ -18,18 +18,86 @@ class _AddDataState extends State<AddData> {
   TextEditingController contactController = TextEditingController();
   TextEditingController divisionController = TextEditingController();
 
-  Future<void> getImage(ImageSource source) async {
-    final imagePicker = ImagePicker();
-    final pickedImage = await imagePicker.pickImage(source: source);
-    if (pickedImage != null) {
+  String? grIdError;
+  String? nameError;
+  String? stdError;
+  String? divisionError;
+  String? contactError;
+
+  void saveData() {
+    if (grIdController.text.isEmpty) {
       setState(() {
-        image = File(pickedImage.path);
+        grIdError = 'Please input a GR-ID';
+      });
+    } else {
+      setState(() {
+        grIdError = null;
       });
     }
-  }
 
-  void _saveData() {
-    if (image != null) {
+    if (nameController.text.isEmpty) {
+      setState(() {
+        nameError = 'Please input a Name';
+      });
+    } else {
+      setState(() {
+        nameError = null;
+      });
+    }
+
+    if (stdController.text.isEmpty) {
+      setState(() {
+        stdError = 'Please input a Std';
+      });
+    } else {
+      setState(() {
+        stdError = null;
+      });
+    }
+
+    if (divisionController.text.isEmpty) {
+      setState(() {
+        divisionError = 'Please input a Division';
+      });
+    } else {
+      setState(() {
+        divisionError = null;
+      });
+    }
+
+    if (contactController.text.isEmpty) {
+      setState(() {
+        contactError = 'Please input a Contact';
+      });
+    } else {
+      setState(() {
+        contactError = null;
+      });
+    }
+
+    if (image == null) {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text("Image Required"),
+            content: Text("Please add an image of the student."),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text("OK"),
+              ),
+            ],
+          );
+        },
+      );
+    } else if (grIdError == null &&
+        nameError == null &&
+        stdError == null &&
+        divisionError == null &&
+        contactError == null) {
       StudentData studentData = StudentData(
         grId: grIdController.text,
         name: nameController.text,
@@ -40,6 +108,16 @@ class _AddDataState extends State<AddData> {
       );
 
       Navigator.pop(context, studentData);
+    }
+  }
+
+  Future<void> getImage(ImageSource source) async {
+    final imagePicker = ImagePicker();
+    final pickedImage = await imagePicker.pickImage(source: source);
+    if (pickedImage != null) {
+      setState(() {
+        image = File(pickedImage.path);
+      });
     }
   }
 
@@ -88,78 +166,115 @@ class _AddDataState extends State<AddData> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
-                    onPressed: () => getImage(ImageSource.camera),
-                    child: Row(
-                      children: [
-                        Icon(Icons.ac_unit_sharp),
-                        Text("Take Photo"),
-                      ],
-                    )),
+                  onPressed: () => getImage(ImageSource.camera),
+                  child: Row(
+                    children: [
+                      Icon(Icons.ac_unit_sharp),
+                      Text("Take Photo"),
+                    ],
+                  ),
+                ),
                 SizedBox(width: 10),
                 ElevatedButton(
-                    onPressed: () => getImage(ImageSource.gallery),
-                    child: Row(
-                      children: [
-                        Icon(Icons.photo_library),
-                        Text("choose from Gallery"),
-                      ],
-                    )),
+                  onPressed: () => getImage(ImageSource.gallery),
+                  child: Row(
+                    children: [
+                      Icon(Icons.photo_library),
+                      Text("choose from Gallery"),
+                    ],
+                  ),
+                ),
               ],
             ),
             SizedBox(height: 20),
-            TextField(
+            TextFormField(
               keyboardType: TextInputType.number,
               controller: grIdController,
               decoration: InputDecoration(
                 labelText: 'Enter GR-ID of Student',
                 border: OutlineInputBorder(),
                 prefixIcon: Icon(Icons.input),
+                errorText: grIdError,
+                errorStyle: TextStyle(color: Colors.red),
               ),
+              onChanged: (_) {
+                setState(() {
+                  grIdError = grIdController.text.isEmpty ? 'Please input a value' : null;
+                });
+              },
             ),
             SizedBox(height: 20),
-            TextField(
+            TextFormField(
               controller: nameController,
               decoration: InputDecoration(
                 labelText: 'Enter Name of Student',
                 border: OutlineInputBorder(),
                 prefixIcon: Icon(Icons.input),
+                errorText: nameError,
+                errorStyle: TextStyle(color: Colors.red),
               ),
+              onChanged: (_) {
+                setState(() {
+                  nameError = nameController.text.isEmpty ? 'Please input a value' : null;
+                });
+              },
             ),
             SizedBox(height: 20),
-            TextField(
+            TextFormField(
               controller: stdController,
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
                 labelText: 'Enter Std of Student',
                 border: OutlineInputBorder(),
                 prefixIcon: Icon(Icons.input),
+                errorText: stdError,
+                errorStyle: TextStyle(color: Colors.red),
               ),
+              onChanged: (_) {
+                setState(() {
+                  stdError = stdController.text.isEmpty ? 'Please input a value' : null;
+                });
+              },
             ),
             SizedBox(height: 20),
-            TextField(
+            TextFormField(
               controller: divisionController,
               decoration: InputDecoration(
-                labelText: 'Enter Divsion of Student',
+                labelText: 'Enter Division of Student',
                 border: OutlineInputBorder(),
                 prefixIcon: Icon(Icons.input),
+                errorText: divisionError,
+                errorStyle: TextStyle(color: Colors.red),
               ),
+              onChanged: (_) {
+                setState(() {
+                  divisionError = divisionController.text.isEmpty ? 'Please input a value' : null;
+                });
+              },
             ),
             SizedBox(height: 20),
-            TextField(
+            TextFormField(
               keyboardType: TextInputType.number,
               controller: contactController,
               decoration: InputDecoration(
                 labelText: 'Enter Contact of Student',
                 border: OutlineInputBorder(),
                 prefixIcon: Icon(Icons.input),
+                errorText: contactError,
+                errorStyle: TextStyle(color: Colors.red),
               ),
+              onChanged: (_) {
+                setState(() {
+                  contactError = contactController.text.isEmpty ? 'Please input a value' : null;
+                });
+              },
             ),
             Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 140),
+                  padding: const EdgeInsets.only(left: 170,top: 15),
                   child: ElevatedButton(
-                    onPressed: _saveData,
+                    onPressed: saveData,
                     child: Text("Save"),
                   ),
                 ),

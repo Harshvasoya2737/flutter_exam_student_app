@@ -16,4 +16,14 @@ class StudentData {
     required this.contact,
     required this.image,
   });
+  factory StudentData.fromJson(Map<String,dynamic> map){
+    return StudentData(
+      grId: map["grId"],
+      name: map["name"],
+      std: map["std"],
+      division: map["division"],
+      contact: map["contact"],
+      image: map["image"],
+    );
+  }
 }
