@@ -2,22 +2,24 @@ Hello Everyone, My name is Harsh Vasoya GR ID-5297, Today I had made a (Student 
 
 I'm sharing you the My application name as (student detail app) screenshot
 
-![Screenshot 2024-04-19 152817](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/b866023f-ec9f-4d8f-8da3-96d6d4740d33)
-![Screenshot 2024-04-19 152835](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/52535d10-d2dd-4026-ac89-09cca4acc62c)
-![Screenshot 2024-04-19 152852](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/a3de2cf8-1c7c-4a56-9588-b12ad130f3bd)
-![Screenshot 2024-04-19 152903](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/321c283f-01f9-4942-b4e5-1ea08fd6a468)
-![Screenshot 2024-04-19 152913](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/b3684113-d474-46c9-a813-4833f62c5eb2)
-![Screenshot 2024-04-19 152927](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/bbd15c97-d0e6-430e-becb-f03b4d4af405)
-![Screenshot 2024-04-19 152936](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/d2ce0af4-f9f9-4560-a6c7-9abd8de6e67c)
-![Screenshot 2024-04-19 152945](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/446df7a4-7b01-40cd-8b04-0a3dc15cda5b)
-![Screenshot 2024-04-19 152954](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/1e70f668-ca09-4458-9f10-aa455a34ce47)
-![Screenshot 2024-04-19 153038](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/22c3ca03-546e-4dd0-8d37-f94e18249e98)
-![Screenshot 2024-04-19 153048](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/baaa4872-1ef3-41b1-9d65-ab917f265719)
-![Screenshot 2024-04-23 145935](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/e3193fd0-377e-487b-89da-98f7e3f5a528)
-![Screenshot 2024-04-23 145956](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/b783ef95-b592-4abc-92d0-d4ea35a77c10)
-![Screenshot 2024-04-23 150018](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/7b0b1e81-c3be-4f7c-851e-489ee3c9c6de)
-![Screenshot 2024-04-23 150036](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/8ff4be43-af61-4d74-a2ee-e14844b9aa8e)
-![Screenshot 2024-04-23 150252](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/dfb7ac50-37a5-4224-9d6e-9276370db2a9)
+![Screenshot 2024-04-23 171120](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/796092c6-83db-46f0-8a2b-e386ea78e37c)
+![Screenshot 2024-04-23 171130](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/3637ae22-b200-4cad-baf6-eb687e8ed3e4)
+![Screenshot 2024-04-23 171249](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/ab363150-d217-4560-9538-53ffdda41164)
+![Screenshot 2024-04-23 171259](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/472c261e-1949-4ad7-b00c-ee894895111d)
+![Screenshot 2024-04-23 171352](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/8aadd7fe-aa00-45ea-8628-5e56f7f33a13)
+![Screenshot 2024-04-23 171447](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/21ef545e-c7fb-4d5d-9b5e-dcbc23659943)
+![Screenshot 2024-04-23 171459](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/93ed047e-0418-4932-b7bc-1960b61d9846)
+![Screenshot 2024-04-23 171510](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/6e6c84bb-a7e2-47ed-95fa-28a24b189a99)
+![Screenshot 2024-04-23 171609](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/00f6052f-de37-4953-9891-0b2f636b9fe0)
+![Screenshot 2024-04-23 171631](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/1e53e3b3-6fcc-47a5-a037-f90054651970)
+![Screenshot 2024-04-23 171643](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/eb36a04f-a681-4b19-98f5-bf16d1069654)
+![Screenshot 2024-04-23 171658](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/5fcf819d-54a2-4742-90b2-1f8deb34323e)
+![Screenshot 2024-04-23 171732](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/dad1b67a-df59-4356-8475-cacf5f6e0eb6)
+![Screenshot 2024-04-23 171801](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/a749588b-ec95-4fac-b261-f5f7ce16426e)
+![Screenshot 2024-04-23 171829](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/28322678-6027-481c-97e6-ada7b0b8f20a)
+![Screenshot 2024-04-23 171858](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/a240e122-1eaf-49a4-96c3-aea30ec52035)
+![Screenshot 2024-04-23 171914](https://github.com/Harshvasoya2737/flutter_exam_student_app/assets/148517061/04980d7e-4f34-47f2-8954-ba9c4b5efba0)
+
 
 
 
