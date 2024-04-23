@@ -1,118 +1,151 @@
-import 'dart:ui';
-
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_exam_student_app/class.dart';
+import 'package:image_picker/image_picker.dart';
 
 class StudentDetails extends StatefulWidget {
   final StudentData student;
+  final Function(StudentData) onUpdate;
+  final Function() onDelete;
 
-  const StudentDetails({Key? key, required this.student})
-      : super(key: key);
+  const StudentDetails({
+    Key? key,
+    required this.student,
+    required this.onUpdate,
+    required this.onDelete,
+  }) : super(key: key);
 
   @override
-  State<StudentDetails> createState() => _StudentDetailsState();
+  _StudentDetailsState createState() => _StudentDetailsState();
 }
 
 class _StudentDetailsState extends State<StudentDetails> {
+  TextEditingController nameController = TextEditingController();
+  TextEditingController grIdController = TextEditingController();
+  TextEditingController stdController = TextEditingController();
+  TextEditingController divisionController = TextEditingController();
+  TextEditingController contactController = TextEditingController();
+  File? _image;
+
+  @override
+  void initState() {
+    super.initState();
+    nameController.text = widget.student.name;
+    grIdController.text = widget.student.grId;
+    stdController.text = widget.student.std;
+    divisionController.text = widget.student.division;
+    contactController.text = widget.student.contact;
+    _image = widget.student.image;
+  }
+
+  Future<void> _getImage(ImageSource source) async {
+    final pickedImage = await ImagePicker().pickImage(source: source);
+    if (pickedImage != null) {
+      setState(() {
+        _image = File(pickedImage.path);
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         backgroundColor: Colors.red,
-        title: Text(
-          'Student Details',
-          style: TextStyle(color: Colors.white),
-        ),
+        title: Text("Student Details",style: TextStyle(color: Colors.white),),
+        centerTitle: true,
         leading: InkWell(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: Icon(
-              Icons.arrow_back_ios_new_outlined,
-              color: Colors.white,
-            )),
+          onTap: () {
+            Navigator.pop(context);
+          },
+            child: Icon(Icons.arrow_back_ios_new_outlined,color: Colors.white,)),
       ),
-      body: Stack(
-        children: [
-          Center(
-            child: Container(
-              height: 500,
-              width: 400,
-              decoration: BoxDecoration(color: Color(0xffF4F4F4), boxShadow: [
-                BoxShadow(
-                  color: Colors.black,
-                  spreadRadius: 5,
-                  blurRadius: 20,
-                )
-              ]),
-            ),
-          ),
-          Column(
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 150),
+              Center(
                 child: CircleAvatar(
-                  backgroundImage: FileImage(widget.student.image),
                   radius: 50,
+                  backgroundImage: _image != null ? FileImage(_image!) : null,
                 ),
               ),
               SizedBox(height: 20),
-              Container(
-                margin: EdgeInsets.all(8.0),
-                height: 50,
-                width: double.infinity,
-                color: Colors.black12,
-                child: Center(
-                  child: Text(
-                    'Name: ${widget.student.name}',
-                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  ElevatedButton.icon(
+                    onPressed: () => _getImage(ImageSource.gallery),
+                    icon: Icon(Icons.photo_library),
+                    label: Text('Change from Gallery'),
                   ),
-                ),
+                  ElevatedButton.icon(
+                    onPressed: () => _getImage(ImageSource.camera),
+                    icon: Icon(Icons.camera_alt),
+                    label: Text('Take a Photo'),
+                  ),
+                ],
               ),
-              SizedBox(height: 15),
-              Container(
-                margin: EdgeInsets.all(8.0),
-                height: 50,
-                width: double.infinity,
-                color: Colors.black12,
-                child: Center(
-                  child: Text(
-                    'GR-ID: ${widget.student.grId}',
-                    style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),
-                  ),
-                ),
+              SizedBox(height: 20),
+              TextField(
+                controller: nameController,
+                decoration: InputDecoration(labelText: 'Name'),
               ),
-              SizedBox(height: 15),
-              Container(
-                margin: EdgeInsets.all(8.0),
-                height: 50,
-                width: double.infinity,
-                color: Colors.black12,
-                child: Center(
-                  child: Text(
-                    'Std: ${widget.student.std} ${widget.student.division}',
-                    style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),
-                  ),
-                ),
+              TextField(
+                controller: grIdController,
+                decoration: InputDecoration(labelText: 'GR-ID'),
               ),
-              SizedBox(height: 15),
-              Container(
-                margin: EdgeInsets.all(8.0),
-                height: 50,
-                width: double.infinity,
-                color: Colors.black12,
-                child: Center(
-                  child: Text(
-                    'Contact: ${widget.student.contact}',
-                    style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),
+              TextField(
+                controller: stdController,
+                decoration: InputDecoration(labelText: 'Std'),
+              ),
+              TextField(
+                controller: divisionController,
+                decoration: InputDecoration(labelText: 'Division'),
+              ),
+              TextField(
+                controller: contactController,
+                decoration: InputDecoration(labelText: 'Contact'),
+              ),
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  ElevatedButton(
+                    onPressed: updateStudent,
+                    child: Text('Update'),
                   ),
-                ),
+                  ElevatedButton(
+                    onPressed: deleteStudent,
+                    child: Text('Delete'),
+                  ),
+                ],
               ),
             ],
           ),
-        ],
+        ),
       ),
     );
+  }
+
+  void updateStudent() {
+    StudentData updatedStudent = StudentData(
+      image: _image ?? widget.student.image,
+      name: nameController.text,
+      grId: grIdController.text,
+      std: stdController.text,
+      division: divisionController.text,
+      contact: contactController.text,
+    );
+
+    widget.onUpdate(updatedStudent);
+    Navigator.of(context).pop();
+  }
+
+  void deleteStudent() {
+    widget.onDelete();
+    Navigator.of(context).pop();
   }
 }

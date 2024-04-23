@@ -37,12 +37,7 @@ class _HomepageState extends State<Homepage> {
               padding: const EdgeInsets.all(8.0),
               child: InkWell(
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => StudentDetails(student: student),
-                    ),
-                  );
+                  Detailspage(student, index);
                 },
                 child: Container(
                   height: 70,
@@ -276,6 +271,26 @@ class _HomepageState extends State<Homepage> {
           ],
         );
       },
+    );
+  }
+  void Detailspage(StudentData student, int index) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => StudentDetails(
+          student: student,
+          onUpdate: (updatedStudent) {
+            setState(() {
+              studentList[index] = updatedStudent;
+            });
+          },
+          onDelete: () {
+            setState(() {
+              studentList.removeAt(index);
+            });
+          },
+        ),
+      ),
     );
   }
 }
